@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://lss5fjq7ik4"]
+
+[ext_resource type="PackedScene" uid="uid://brajqsd36kv80" path="res://scenes/player.tscn" id="1_o5qli"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_color = Color(0.83643997, 0.94385624, 1.540184e-06, 1)
+emission_enabled = true
+emission = Color(0.6685107, 0.8821491, 1.92523e-06, 1)
+emission_energy_multiplier = 1.5
+
+[node name="Main" type="Node3D" unique_id=1629542677]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=832820974]
+transform = Transform3D(0.70710677, 0.49999997, -0.49999997, 0, 0.70710677, 0.70710677, 0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Level" type="Node3D" parent="." unique_id=1140721658]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level" unique_id=1792288682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(40, 1, 40)
+
+[node name="WallNorth" type="CSGBox3D" parent="Level" unique_id=29863092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -20)
+use_collision = true
+size = Vector3(40, 4, 1)
+
+[node name="WallSouth" type="CSGBox3D" parent="Level" unique_id=47041940]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 20)
+use_collision = true
+size = Vector3(40, 4, 1)
+
+[node name="WallEast" type="CSGBox3D" parent="Level" unique_id=1395719866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.5, 0)
+use_collision = true
+size = Vector3(1, 4, 40)
+
+[node name="WallWest" type="CSGBox3D" parent="Level" unique_id=911850677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.5, 0)
+use_collision = true
+size = Vector3(1, 4, 40)
+
+[node name="Ramp" type="CSGBox3D" parent="Level" unique_id=1202622845]
+transform = Transform3D(0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 0, 1, -8, 0.8, 5)
+use_collision = true
+size = Vector3(5, 0.3, 3)
+
+[node name="Platform1" type="CSGBox3D" parent="Level" unique_id=224451872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2.5, 5)
+use_collision = true
+size = Vector3(4, 0.4, 3)
+
+[node name="Platform2" type="CSGBox3D" parent="Level" unique_id=255804491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, 5)
+use_collision = true
+size = Vector3(3, 0.4, 3)
+
+[node name="Platform3" type="CSGBox3D" parent="Level" unique_id=1687502675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5.5, 5)
+use_collision = true
+size = Vector3(3, 0.4, 3)
+
+[node name="Tower" type="CSGBox3D" parent="Level" unique_id=1490305953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3.5, 5)
+use_collision = true
+size = Vector3(3, 7, 3)
+
+[node name="TowerWindow" type="CSGBox3D" parent="Level/Tower" unique_id=784637970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.5)
+operation = 2
+size = Vector3(1.2, 1.2, 1)
+
+[node name="TowerDoor" type="CSGBox3D" parent="Level/Tower" unique_id=1597145762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -2, 0)
+operation = 2
+size = Vector3(1, 2.5, 1.2)
+
+[node name="Pillar1" type="CSGCylinder3D" parent="Level" unique_id=906864525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -5)
+use_collision = true
+radius = 0.6
+height = 4.0
+
+[node name="Pillar2" type="CSGCylinder3D" parent="Level" unique_id=640686131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -5)
+use_collision = true
+radius = 0.6
+height = 4.0
+
+[node name="Pillar3" type="CSGCylinder3D" parent="Level" unique_id=1435057757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, -5)
+use_collision = true
+radius = 0.6
+height = 4.0
+
+[node name="PillarTop" type="CSGBox3D" parent="Level" unique_id=608598240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4.2, -5)
+use_collision = true
+size = Vector3(8, 0.4, 2)
+
+[node name="GoalBlock" type="CSGBox3D" parent="Level" unique_id=1462947124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, 5)
+use_collision = true
+size = Vector3(1.5, 1.5, 1.5)
+material = SubResource("StandardMaterial3D_0wfyh")
+
+[node name="GoalLight" type="OmniLight3D" parent="Level/GoalBlock" unique_id=1928422832]
+light_color = Color(0.86085093, 0.7333063, 0, 1)
+light_energy = 2.0
+omni_range = 8.0
+
+[node name="player" parent="." unique_id=357509941 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10)
